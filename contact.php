@@ -13,6 +13,9 @@
     // echo $sql;
     $connect->query($sql);
     echo $connect->error;
+    //va permettre d'éviter de renoueler la requête au referesh
+    header("location:contact.php?contact=ok");
+    exit;
     endif;
 ?>
 <!DOCTYPE html>
@@ -33,6 +36,9 @@
         <input type="hidden" name="action" value="contact">
         <button>Envoyer</button>
     </form>
+    <?php if(isset($_GET['contact']) AND $_GET['contact'] == 'ok'):?>
+        <p>MESSAGE SAVED</p>
+    <?php endif;?>
 </body>
 </html>
 
