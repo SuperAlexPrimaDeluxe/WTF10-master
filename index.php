@@ -27,7 +27,7 @@ myPrint_r($allNews);
 <body>
     <h1>Les super news de qualité prima deluxe</h1>
     <?php foreach($allNews as $key => $news):?>
-        <details data-id="<?php echo $news[id];?>"<?php echo ($key == 0) ? 'open' : '';?>>
+        <details data-id="<?php echo $news['id'];?>"<?php echo ($key == 0) ? 'open' : '';?>>
         <summary><?php echo $news['titre'];?><summary>
             <?php echo $news['contenu'];?>
     </details>
